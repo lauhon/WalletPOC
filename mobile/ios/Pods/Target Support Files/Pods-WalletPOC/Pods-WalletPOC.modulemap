@@ -1,0 +1,6 @@
+module Pods_WalletPOC {
+  umbrella header "Pods-WalletPOC-umbrella.h"
+
+  export *
+  module * { export * }
+}
