@@ -1,6 +1,7 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React from 'react';
 import {
+  Alert,
   Button,
   StyleProp,
   Text,
@@ -8,6 +9,12 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+
+import "../../../shim";
+const bitcoin = require("bitcoinjs-lib");
+const keyPair = bitcoin.ECPair.makeRandom();
+const { address } = bitcoin.payments.p2pkh({ pubkey: keyPair.publicKey });
+Alert.alert("jow lautsch, wenn des ausschaut wie a adresse is leiwond --> " , address);
 
 type Props = NativeStackScreenProps<NavigationRoutes, 'GettingStarted'>;
 
