@@ -2449,7 +2449,7 @@
   "resolved" "https://registry.npmjs.org/bip174/-/bip174-2.1.0.tgz"
   "version" "2.1.0"
 
-"bip32@^2.0.4":
+"bip32@^2.0.4", "bip32@^2.0.6":
   "integrity" "sha512-HpV5OMLLGTjSVblmrtYRfFFKuQB+GArM0+XP8HGWfJ5vxYBqo+DesvJwOdC2WJ3bCkZShGf0QIfoIpeomVzVdA=="
   "resolved" "https://registry.npmjs.org/bip32/-/bip32-2.0.6.tgz"
   "version" "2.0.6"
@@ -6702,6 +6702,11 @@
   dependencies:
     "react-freeze" "^1.0.0"
     "warn-once" "^0.1.0"
+
+"react-native-uuid@^2.0.1":
+  "integrity" "sha512-cptnoIbL53GTCrWlb/+jrDC6tvb7ypIyzbXNJcpR3Vab0mkeaaVd5qnB3f0whXYzS+SMoSQLcUUB0gEWqkPC0g=="
+  "resolved" "https://registry.npmjs.org/react-native-uuid/-/react-native-uuid-2.0.1.tgz"
+  "version" "2.0.1"
 
 "react-native@*", "react-native@0.68.1":
   "integrity" "sha512-5gfvslo5NO2Ece2k/q41eVOK3ca4u1QAOf+qM+auvOiUA4/QR5Yr0WfSGbRpUr2GaFgv7qP11F4+elCravg7uQ=="
