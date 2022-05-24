@@ -18,8 +18,9 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-import GettingStarted from './views/getting-started';
-import CreateWallet from './views/getting-started/create-wallet';
+import GettingStarted from './views/getting-started/getting-started';
+import CreateWallet from './views/create-wallet/create-wallet';
+import ImportWallet from './views/import-wallet/import-wallet';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -39,6 +40,7 @@ const App = () => {
           <Stack.Navigator initialRouteName="GettingStarted">
             <Stack.Screen name="GettingStarted" component={GettingStarted} />
             <Stack.Screen name="CreateWallet" component={CreateWallet} />
+            <Stack.Screen name="ImportWallet" component={ImportWallet} />
           </Stack.Navigator>
         </View>
       </SafeAreaView>

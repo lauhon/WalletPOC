@@ -3,18 +3,14 @@ import React from 'react';
 import {
   Alert,
   Button,
+  Pressable,
   StyleProp,
+  StyleSheet,
   Text,
   TextStyle,
   useColorScheme,
   View,
 } from 'react-native';
-
-import "@Shim";
-const bitcoin = require("bitcoinjs-lib");
-const keyPair = bitcoin.ECPair.makeRandom();
-const { address } = bitcoin.payments.p2pkh({ pubkey: keyPair.publicKey });
-Alert.alert("jow lautsch, wenn des ausschaut wie a adresse is leiwond --> " , address);
 
 type Props = NativeStackScreenProps<NavigationRoutes, 'GettingStarted'>;
 
@@ -30,10 +26,13 @@ const GettingStarted = ({navigation}: Props) => {
   return (
     <View>
       <Text style={textStyle}>Welcome to Secure Wallet</Text>
-      <Button
-        onPress={() => navigation.navigate('CreateWallet')}
-        title="Create Wallet"
-      />
+      <Pressable 
+        onPress={() => navigation.navigate('CreateWallet')}>
+        <Text>Create Wallet</Text>
+      </Pressable>
+      <Pressable onPress={() => navigation.navigate('ImportWallet')}>
+        <Text>Import Wallet</Text>
+      </Pressable>
     </View>
   );
 };
