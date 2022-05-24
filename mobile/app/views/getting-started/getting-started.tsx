@@ -12,26 +12,25 @@ import {
   View,
 } from 'react-native';
 
+import {getStyles} from './getting-started.styles'
+
 type Props = NativeStackScreenProps<NavigationRoutes, 'GettingStarted'>;
 
 const GettingStarted = ({navigation}: Props) => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const textStyle: StyleProp<TextStyle> = {
-    color: isDarkMode ? '#fff' : '#000',
-    fontWeight: '700',
-    textAlign: 'center',
-  };
+  const styles = getStyles(useColorScheme() === 'dark')
 
   return (
-    <View>
-      <Text style={textStyle}>Welcome to Secure Wallet</Text>
+    <View style={styles.container}>
+      <Text style={styles.text}>Welcome to Secure Wallet</Text>
       <Pressable 
-        onPress={() => navigation.navigate('CreateWallet')}>
-        <Text>Create Wallet</Text>
+        onPress={() => navigation.navigate('CreateWallet')}
+        style={styles.button}>
+        <Text style={styles.buttonText}>Create Wallet</Text>
       </Pressable>
-      <Pressable onPress={() => navigation.navigate('ImportWallet')}>
-        <Text>Import Wallet</Text>
+      <Pressable 
+        onPress={() => navigation.navigate('ImportWallet')}
+        style={styles.button}>
+        <Text style={styles.buttonText}>Import Wallet</Text>
       </Pressable>
     </View>
   );
