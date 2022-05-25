@@ -25,7 +25,7 @@ function splitUuid(uuid: string): string {
   var dec1 = parseInt(uuidNew[1],16).toString();
   var dec2 = parseInt(uuidNew[2],16).toString();
   var dec3 = parseInt(uuidNew[3],16).toString();
-  return dec1+'/'+dec2+'/'+dec3;
+  return dec1+"'/"+dec2+"'/"+dec3+"'";
 }
 
 function hmacSHA512(key: Buffer, data: string): Buffer {
@@ -68,6 +68,7 @@ const CreateWallet = () => {
     const combinedSeed = hmacSHA512(Buffer.from('Bitcoin seed', 'utf8'), userSeed+serverSeed);
     SetCombinedSeed(Buffer.from(combinedSeed as Buffer).toString('hex'));
         
+
     //client extended private key
     const clientRoot = fromSeed(
       Buffer.from(
@@ -77,7 +78,7 @@ const CreateWallet = () => {
     );
     SetClientRoot(clientRoot.toBase58())
 
-    Alert.alert("user acc address: " + getAddress(clientRoot.derivePath("m/44'/0'/0'/0/0")))
+    Alert.alert("user acc address: " + getAddress(clientRoot.derivePath("m/44'/0'/0'/0'/0'")))
   }
 
   return( 
