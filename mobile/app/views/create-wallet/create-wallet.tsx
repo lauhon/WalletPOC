@@ -65,13 +65,13 @@ const CreateWallet = () => {
     SetUserSeed(userSeed)
 
     //combined user/server-Seed - client at initial setup
-    const I = hmacSHA512(Buffer.from('Bitcoin seed', 'utf8'), userSeed);
-    SetCombinedSeed(Buffer.from(I as Buffer).toString('hex'));
+    const combinedSeed = hmacSHA512(Buffer.from('Bitcoin seed', 'utf8'), userSeed+serverSeed);
+    SetCombinedSeed(Buffer.from(combinedSeed as Buffer).toString('hex'));
         
     //client extended private key
     const clientRoot = fromSeed(
       Buffer.from(
-        Buffer.from(I as Buffer).toString('hex'),
+        Buffer.from(combinedSeed as Buffer).toString('hex'),
         'hex',
       ),
     );
